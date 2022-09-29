@@ -3,6 +3,7 @@
 if($_SERVER['REQUEST_METHOD']=="POST" && $_POST)
 {
     // print_r($_POST);
+    
     if(!$_POST['loanyears']||!$_POST['loanamount'])
     {
         die;
@@ -20,7 +21,7 @@ if($_SERVER['REQUEST_METHOD']=="POST" && $_POST)
     $totalloan=$_POST['loanamount']+$interestrate;
     $no_of_months=$_POST['loanyears']*12;
     $monthly=$totalloan/$no_of_months;
-
+    
     $bank=[
         'Username'=>$_POST['username'],
         'Interest Rate'=>$interestrate,
@@ -73,6 +74,7 @@ if($_SERVER['REQUEST_METHOD']=="POST" && $_POST)
             <div class="col-12 text-center text-primary mt-5 mb-4">
                 <h1>Bank</h1>
             </div>
+
             <div class="col-10 offset-1">
                 <form method="POST">
                     <div class="form-group">
